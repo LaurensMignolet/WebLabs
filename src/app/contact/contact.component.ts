@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
+import { Component, OnInit, Input, Output } from '@angular/core'
 import { Contact } from '../../models/contact.model';
 
 @Component({
@@ -10,7 +10,6 @@ import { Contact } from '../../models/contact.model';
 export class ContactComponent implements OnInit{
 
     @Input() contact: Contact;
-    @Output() onSubmit: EventEmitter<Contact> = new EventEmitter();
 
     ngOnInit(){
         //this.name = 'John Doe';
@@ -21,6 +20,6 @@ export class ContactComponent implements OnInit{
 
     submit(){
         console.log('submit')
-        this.onSubmit.emit(this.contact);
+        //this.onSubmit.emit(this.contact);
     }
 }

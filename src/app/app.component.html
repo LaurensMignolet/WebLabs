@@ -7,3 +7,7 @@
 *ngFor="let contact of contactList;"
 [contact]="contact"
 ></app-contact>
+
+<app-contact-from
+(onSubmit)="createContact($event)"
+></app-contact-from>

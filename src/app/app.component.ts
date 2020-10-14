@@ -39,5 +39,9 @@ export class AppComponent {
       console.log("recieved Data!", event)
     }
 
+    createContact(event: Contact){
+      this.contactList.push(event);
+    }
+
   title = 'contactApp';
 }

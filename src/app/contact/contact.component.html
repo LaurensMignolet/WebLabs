@@ -9,13 +9,10 @@
         <li> Phone: {{contact.phone}}</li>
     </ul>
 </div>
-    <input type="text" name ="name" placeholder="Name" [(ngModel)] = "contact.name">
     <img [src]="contact.avatar" alt="avatar">
-    <input type="email" name="email" placeholder="email@domain.com" [(ngModel)]="contact.email">
-    <input type="tel" name="phone" placeholder="Phone Number" [(ngModel)]="contact.phone">
     <input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" >
     <label for="isFavorite" 
     [class.favorite]="contact.isFavorite"
     >Favorite</label>
-    <button type="button" (click)="submit()" >Submit</button>
+    <button type="button"  >Submit</button>
  
