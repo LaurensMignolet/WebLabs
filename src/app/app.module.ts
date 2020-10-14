@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
 import { ContactFromComponent } from './contact-from/contact-from.component'
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import { ContactFromComponent } from './contact-from/contact-from.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
