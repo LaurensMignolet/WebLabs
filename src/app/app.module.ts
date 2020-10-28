@@ -10,6 +10,7 @@ import { ContactFromComponent } from './contact-from/contact-from.component'
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ContactService } from './services/contact.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

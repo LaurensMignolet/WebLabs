@@ -4,8 +4,10 @@
 -->
 
 <app-contact 
-*ngFor="let contact of contactList;"
-[contact]="contact"
+*ngFor="let contact of contactList; let i = index"
+[contact]="contact" [index]="i"
+(onUpdate)="handleUpdate($event)"
+
 ></app-contact>
 
 <app-contact-from

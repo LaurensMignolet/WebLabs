@@ -10,7 +10,7 @@
     </ul>
 </div>
     <img [src]="contact.avatar" alt="avatar">
-    <input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" >
+    <input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" (click)="toggleFavorite(index)" >
     <label for="isFavorite" 
     [class.favorite]="contact.isFavorite"
     >Favorite</label>
