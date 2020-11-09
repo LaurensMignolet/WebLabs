@@ -2,10 +2,12 @@
 (onSubmit)="handleData($event)"
 ></app-contact>
 -->
+<button type="button" [class.onlyFavorites]="onlyFavorites"
+        (click)="toggleView(onlyFavorites)">Show {{ onlyFavorites ? 'All' : 'Favorites' }}</button>
 
 <app-contact 
 *ngFor="let contact of contactList; let i = index"
-[contact]="contact" [index]="i"
+[contact]="contact"
 (onUpdate)="handleUpdate($event)"
 
 ></app-contact>

@@ -9,13 +9,16 @@ import { ContactService } from './services/contact.service'
 })
 export class AppComponent {
   contactList: Contact[];
-
+  onlyFavorites : boolean = false;
   constructor(private service: ContactService){}
 
   ngOnInit(): void {
-    this.contactList = this.service.getContactList();
+    this.fetchContactList(this.onlyFavorites);
   }
 
+  fetchContactList(onlyFavo: boolean ): void{
+    this.service.getContactList(onlyFavo).subscribe(data => {this.contactList = data});
+  }
 
 
     handleData(event:Contact){
@@ -23,13 +26,18 @@ export class AppComponent {
     }
 
     HandleUpdate(): void{
-      this.contactList = this.service.getContactList();
+        this.fetchContactList(this.onlyFavorites)
     }
 
     createContact(event: Contact){
-      this.service.addContact(event);
-      this.contactList = this.service.getContactList();
+      this.service.addContact(event).subscribe(()=>this.fetchContactList(this.onlyFavorites))
     }
+
+    toggleView(onlyFavo: boolean): void{
+      this.onlyFavorites = !onlyFavo;
+      this.fetchContactList(this.onlyFavorites);
+    }
+
 
   title = 'contactApp';
 }
