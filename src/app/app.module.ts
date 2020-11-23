@@ -13,12 +13,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 
 import {HttpClientModule} from '@angular/common/http';
+import { CapitalizePipe } from './pipies/capitalize.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ContactFromComponent
+    ContactFromComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,
